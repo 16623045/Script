@@ -1,9 +1,9 @@
 {
-	"id": "off-white.app.sub",
-	"name": "off-white 应用订阅",
-	"author": "@off-white",
-	"icon": "https://gitee.com/off-white/scripts/raw/master/off-white.png",
-	"repo": "https://gitee.com/off-white/scripts",
+	"id": "myboxs.app.sub",
+	"name": "myboxs 应用订阅",
+	"author": "@myboxs",
+	"icon": "https://github.com/myboxs",
+	"repo": "https://github.com/myboxs",
 	"apps": [
         {
         "id": "10000",
