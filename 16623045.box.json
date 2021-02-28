@@ -307,7 +307,7 @@
 				"type": "textarea",
 				"autoGrow": false,
 				"rows": 1,
-				"desc": "请复制zqgetbody_body阅读请求body到此，缩减请求开启后此处自动删除。"
+				"desc": "请复制zqgetbody_body阅读请求到此，缩减请求从此处自动删除。"
 			}
       ],
       "repo": "https://github/sunert", 
