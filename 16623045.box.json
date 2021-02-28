@@ -268,7 +268,7 @@
       {   "descs_html": [
         "配置说明</a></h4>", 
         "<br />", 
-        "<p>其中zqgetbody_body为阅读请求</p>"
+        "<p>其中zqgetbody_body为阅读获取的请求,请将其复制到youth_autoread中，自动缩减请求将从youth_autoread中删除。</p>"
       ], 
       "id": "youthRead",  
       "name": "中青自动阅读",
