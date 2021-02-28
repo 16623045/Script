@@ -23,42 +23,6 @@ boxjs地址 :
 
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
-
-阅友小说
-圈X配置如下，其他软件自行测试
-[task_local]
-#阅友小说
-15 12 * * * https://raw.githubusercontent.com/age174/-/main/yyxs.js, tag=阅友小说, img-url=https://s3.ax1x.com/2021/02/27/6pouiF.jpg, enabled=true
-
-
-[rewrite_local]
-#阅友小说header
-http.*://.*.reader.yueyouxs.com/ url script-request-header https://raw.githubusercontent.com/age174/-/main/yyxs.js
-
-#阅友小说body
-http.*://.*.reader.yueyouxs.com/ url script-request-body https://raw.githubusercontent.com/age174/-/main/yyxs.js
-
-#loon用户
-
-#header
-http.*://.*.reader.yueyouxs.com/ script-path=https://raw.githubusercontent.com/age174/-/main/yyxs.js, requires-header=true, timeout=10, tag=阅友小说
-
-#body
-http.*://.*.reader.yueyouxs.com/ script-path=https://raw.githubusercontent.com/age174/-/main/yyxs.js, requires-body=true, timeout=10, tag=阅友小说
-
-#surge用户
-
-#header
-阅友小说 = type=http-request,pattern=http.*://.*.reader.yueyouxs.com/,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yyxs.js,script-update-interval=0
-
-#body
-阅友小说 = type=http-request,pattern=http.*://.*.reader.yueyouxs.com/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yyxs.js,script-update-interval=0
-
-
-[MITM]
-hostname = *.reader.yueyouxs.com
-
-
 */
 
 
