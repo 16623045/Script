@@ -277,7 +277,7 @@
       "settings": [
 	      {
 				"id": "zqgetbody_body",
-				"name": "阅读请求zqgetbody_body",
+				"name": "阅读请求",
 				"val": "",
 				"type": "textarea",
 				"autoGrow": false,
@@ -302,7 +302,7 @@
         },
 	      {
 				"id": "youth_autoread",
-				"name": "缩减请求youth_autoread",
+				"name": "缩减请求body",
 				"val": "",
 				"type": "textarea",
 				"autoGrow": false,
