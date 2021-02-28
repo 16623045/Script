@@ -275,6 +275,15 @@
       "author": "@sunert", 
       "keys": ["zqgetbody_body", "youth_autoread", "autotime_zq"],
       "settings": [
+	      {
+				"id": "zqgetbody_body",
+				"name": "阅读请求",
+				"val": "",
+				"type": "textarea",
+				"autoGrow": false,
+				"rows": 1,
+				"desc": "阅读获取的请求body。"
+			},
           {
 				"id": "zqbody_index",
 				"name": "上次执行位置",
@@ -290,7 +299,16 @@
           "name": "缩减请求", 
           "type": "boolean", 
           "desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
-        }
+        },
+	      {
+				"id": "youth_autoread",
+				"name": "缩减请求body",
+				"val": "",
+				"type": "textarea",
+				"autoGrow": false,
+				"rows": 1,
+				"desc": "请复制zqgetbody_body阅读请求body到此，缩减请求开启后此处自动删除。"
+			},
       ],
       "repo": "https://github/sunert", 
       "script": "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_read.js",
