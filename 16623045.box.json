@@ -282,7 +282,7 @@
 				"type": "textarea",
 				"autoGrow": false,
 				"rows": 1,
-				"desc": "阅读获取的请求body。"
+				"desc": "获取的阅读请求body"
 			},
           {
 				"id": "zqbody_index",
@@ -307,7 +307,7 @@
 				"type": "textarea",
 				"autoGrow": false,
 				"rows": 1,
-				"desc": "请复制zqgetbody_body阅读请求到此，缩减请求从此处自动删除。"
+				"desc": "请将获取的阅读请求body复制到此，缩减请求从此处自动删除"
 			}
       ],
       "repo": "https://github/sunert", 
