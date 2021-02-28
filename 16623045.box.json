@@ -73,7 +73,7 @@
     {
 		"id": "txstockapp",
 		"name": "腾旭自选股",
-        "author": "@CenBoMin",
+                "author": "@CenBoMin",
 		"keys": ["signheader", "signkey", "taskheader", "taskkey", "userheader", "userkey", "wxtaskkey","cash"],
 		"settings": [
 			{
@@ -89,36 +89,59 @@
 		"icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png","https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png"
 		]
 	},
+	{
+            "id": "fqkk",
+            "name": "番茄看看",
+	    "author": "@feizao",
+            "keys": ["fqkkurl", "fqkkhd","fqkkurl2","fqkkhd2","fqkkurl3","fqkkhd3","fqkkurl4","fqkkhd4","fqkkurl5", "fqkkhd5"],
+            "settings": [{
+            "id": "fqkkstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
     {
-		"id": "dkdvideo",
-		"name": "多看点视频",
-        "author": "@CenBoMin",
-		"keys": ["dkdtokenbody", "dkdtokenkey", "getawardbody","getawardbody_index","dkdcashurl","dkdcashkey","dkdlottourl","dkdlottokey"],
-        "settings": [
-			{
-				"id": "getawardbody",
-				"name": "视频请求",
-				"val": "",
-				"type": "textarea",
-				"autoGrow": false,
-				"rows": 1,
-				"desc": "看视频，倒计时转一圈显示金币到账。"
-			},
-			{
-				"id": "zqbody_index",
-				"name": "上次执行位置",
-				"val": "",
-				"type": "textarea",
-				"autoGrow": false,
-				"rows": 1,
-				"desc": "记录上次执行的位置，可以控制从第几个阅读请求开始执行"
-			}
-            ],
-		"repo": "https://github.com/CenBoMin/GithubSync",
-		"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkdvideo.js",
-		"icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png"
-		]
-	},
+            "id": "fqkkcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    },
+    {
+            "id": "fqtx",
+            "name": "提现金额",
+            "val": "100",
+            "type": "number",
+            "desc": "需要自动提现多少，数字为金额的一百倍，如提现0.3元填写30，默认100为提现1元,最低提现额度为0.3元"
+    }],
+            "repo": "https://github.com/age174",
+            "icons": ["https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg"],
+            "script": "https://raw.githubusercontent.com/16623045/Script/main/fqkk/fqkk.js"
+    },
+    {
+            "id": "yyxs",
+            "name": "阅友小说",
+            "keys": ["yyxsspurl", "yyxssphd","yyxsspbody","yyxsjsurl","yyxsscurl","yyxsschd","yyxscjurl","yyxscjhd", "yyxsxxurl", "yyxsspurl2", "yyxssphd2","yyxsspbody2","yyxsjsurl2","yyxsscurl2","yyxsschd2","yyxscjurl2","yyxscjhd2", "yyxsxxurl2"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "yyxsstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "yyxscount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174",
+            "icons": ["https://s3.ax1x.com/2021/02/27/6pouiF.jpg", "https://s3.ax1x.com/2021/02/27/6pouiF.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/yyxs.js"
+    },	
     {
         "id": "flw",
         "name": "返利网",
@@ -154,43 +177,10 @@
                 }
             ],
             "repo": "https://github.com/ziye66666",
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js",
+            "script": "https://raw.githubusercontent.com/16623045/Script/main/flw/flw.js",
             "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png"
             ]
     },
-    {
-	    "id": "runstep",
-	    "name": "走路赚钱",
-        "author": "@CenBoMin",
-	    "keys": ["version", "runsteptoken", "runstepkey", "txtoken", "txkey", "runsteptoken2", "runstepkey2", "txtoken2", "txkey2", "runsteptoken3", "runstepkey3", "txtoken3", "txkey3", "runsteptoken4", "runstepkey4", "txtoken4", "txkey4"],
-        "settings": [
-			{
-				"id": "version",
-				"name": "APP版本号:更新软件,请更改。",
-	            "val": "",
-	            "type": "text",
-	            "desc": "默认1.5.1,更新APP软件,请更改。"
-			},
-            {
-				"id": "Suffix",
-				"name": "当前账号",
-				"val": "1",
-				"type": "number",
-				"desc": "当前抓取ck记录的账号序号，如：1、2、3、"
-			},
-            {
-				"id": "Count",
-				"name": "账号个数",
-				"val": "1",
-				"type": "number",
-				"desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
-			}
-            ],
-	    "repo": "https://github.com/CenBoMin/GithubSync",
-	    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep.js",
-	    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png"
-		]
-	},
     {   "descs_html": [
         "配置说明</a></h4>", 
         "<br />", 
@@ -343,7 +333,70 @@
         "script" : "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_banner.js",
         "icons" : ["https://raw.githubusercontent.com/16623045/Script/main/logo/youth.png","https://raw.githubusercontent.com/16623045/Script/main/logo/youth.png"
       ]
-    }
+    },
+		 {
+		"id": "dkdvideo",
+		"name": "多看点视频",
+        "author": "@CenBoMin",
+		"keys": ["dkdtokenbody", "dkdtokenkey", "getawardbody","getawardbody_index","dkdcashurl","dkdcashkey","dkdlottourl","dkdlottokey"],
+        "settings": [
+			{
+				"id": "getawardbody",
+				"name": "视频请求",
+				"val": "",
+				"type": "textarea",
+				"autoGrow": false,
+				"rows": 1,
+				"desc": "看视频，倒计时转一圈显示金币到账。"
+			},
+			{
+				"id": "zqbody_index",
+				"name": "上次执行位置",
+				"val": "",
+				"type": "textarea",
+				"autoGrow": false,
+				"rows": 1,
+				"desc": "记录上次执行的位置，可以控制从第几个阅读请求开始执行"
+			}
+            ],
+		"repo": "https://github.com/CenBoMin/GithubSync",
+		"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkdvideo.js",
+		"icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png"
+		]
+	},
+	{
+	    "id": "runstep",
+	    "name": "走路赚钱",
+        "author": "@CenBoMin",
+	    "keys": ["version", "runsteptoken", "runstepkey", "txtoken", "txkey", "runsteptoken2", "runstepkey2", "txtoken2", "txkey2", "runsteptoken3", "runstepkey3", "txtoken3", "txkey3", "runsteptoken4", "runstepkey4", "txtoken4", "txkey4"],
+        "settings": [
+			{
+				"id": "version",
+				"name": "APP版本号:更新软件,请更改。",
+	            "val": "",
+	            "type": "text",
+	            "desc": "默认1.5.1,更新APP软件,请更改。"
+			},
+            {
+				"id": "Suffix",
+				"name": "当前账号",
+				"val": "1",
+				"type": "number",
+				"desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+			},
+            {
+				"id": "Count",
+				"name": "账号个数",
+				"val": "1",
+				"type": "number",
+				"desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+			}
+            ],
+	    "repo": "https://github.com/CenBoMin/GithubSync",
+	    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep.js",
+	    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png"
+		]
+	}
   ]
 }
 
