@@ -1,12 +1,11 @@
 /*
-软件名称:番茄看看 微信扫描二维码打开
+软件名称:番茄看看 微信扫描二维码打开https://raw.githubusercontent.com/age174/-/main/3F545C70-389B-4155-ACB1-15B6FDA95501.jpeg
 更新时间：2021-02-27 @肥皂
 boxjs地址 :  https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
 每日收益1.7元左右，可多号撸。提现秒到
-
-任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3F545C70-389B-4155-ACB1-15B6FDA95501.jpeg
+https://raw.githubusercontent.com/age174/-/main/fqkk.js
 
 可以去boxjs修改自动提现金额和循环次数
 最低提现额度为0.3元，默认提现1元
