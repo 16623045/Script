@@ -65,7 +65,7 @@
 		    }
             ],
 		"repo": "https://github.com/ziye66666",
-		"script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js",
+		"script": "https://raw.githubusercontent.com/16623045/Script/main/xiaopu/iboxpay.js",
 		"icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png",
 		"https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png"
         ]
@@ -85,7 +85,7 @@
 			}
             ],
 		"repo": "https://github.com/CenBoMin/GithubSync",
-		"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockqx.js",
+		"script": "https://raw.githubusercontent.com/16623045/Script/main/txstock/txstockqx.js",
 		"icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png","https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png"
 		]
 	},
@@ -261,7 +261,7 @@
         }
 		],
         "repo" : "https://github.com/Sunert/Scripts",
-        "script" : "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js",
+        "script" : "https://raw.githubusercontent.com/16623045/Script/main/youth/youth.js",
         "icons" : ["https://gitee.com/off-white/scripts/raw/master/logo/youth.png","https://gitee.com/off-white/scripts/raw/master/logo/youth.png"
 		]
 	},
@@ -292,8 +292,8 @@
           "desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
         }
       ],
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/Youth_Read.js", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js",
+      "repo": "https://github/sunert", 
+      "script": "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_Read.js",
       "icons": [
         "https://gitee.com/off-white/scripts/raw/master/logo/youth.png", 
         "https://gitee.com/off-white/scripts/raw/master/logo/youth.png"
@@ -322,7 +322,7 @@
         }
         ],
         "repo" : "https://github.com/ztxtop/x/",
-        "script" : "https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js",
+        "script" : "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_banner.js",
         "icons" : ["https://gitee.com/off-white/scripts/raw/master/logo/youth.png","https://gitee.com/off-white/scripts/raw/master/logo/youth.png"
       ]
     }
