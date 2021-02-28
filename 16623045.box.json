@@ -273,11 +273,11 @@
       "id": "youthRead",  
       "name": "中青自动阅读",
       "author": "@sunert", 
-      "keys": ["zqgetbody_body", "youth_autoread", "autotime_zq"],
+      "keys": ["autotime_zq"],
       "settings": [
 	      {
 				"id": "zqgetbody_body",
-				"name": "阅读请求",
+				"name": "阅读请求zqgetbody_body",
 				"val": "",
 				"type": "textarea",
 				"autoGrow": false,
@@ -302,7 +302,7 @@
         },
 	      {
 				"id": "youth_autoread",
-				"name": "缩减请求body",
+				"name": "缩减请求youth_autoread",
 				"val": "",
 				"type": "textarea",
 				"autoGrow": false,
