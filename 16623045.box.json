@@ -293,7 +293,7 @@
         }
       ],
       "repo": "https://github/sunert", 
-      "script": "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_Read.js",
+      "script": "https://raw.githubusercontent.com/16623045/Script/main/youth/youth_read.js",
       "icons": [
         "https://gitee.com/off-white/scripts/raw/master/logo/youth.png", 
         "https://gitee.com/off-white/scripts/raw/master/logo/youth.png"
