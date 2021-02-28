@@ -6,52 +6,15 @@
 每日收益1元左右，可多号撸。提现秒到
 类似番茄看看，番茄看看黑了就跑云扫码，云扫码黑了就跑番茄看看
 哈哈哈啊哈哈哈哈
-
-任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3B7C4F94-B961-4690-8DF7-B27998789124.png
+https://raw.githubusercontent.com/age174/-/main/feizao.box.json
+微信扫描二维码打开https://raw.githubusercontent.com/age174/-/main/3B7C4F94-B961-4690-8DF7-B27998789124.png
 微信扫描打开，保存临时码，再去扫码获取数据
-
-
-
+https://raw.githubusercontent.com/age174/-/main/ysm.js
 本脚本以学习为主！
 首次运行脚本，会提示获取数据
 去云扫码，点击开始阅读，阅读几秒返回结算成功获取数据
 
 TG电报群: https://t.me/hahaha802
-
-
-boxjs地址 :  
-
-https://raw.githubusercontent.com/age174/-/main/feizao.box.json
-
-
-云扫码
-圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
-[task_local]
-#云扫码
-15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true
-
-
-[rewrite_local]
-#云扫码
-^http://.*./yunonline/v1/ url script-request-body https://raw.githubusercontent.com/age174/-/main/ysm.js
-
-
-
-#loon
-^http://.*./yunonline/v1/ script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js, requires-body=true, timeout=10, tag=云扫码
-
-
-
-#surge
-
-云扫码 = type=http-request,pattern=^http://.*./yunonline/v1/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js,script-update-interval=0
-
-
-
-
-[MITM]
-hostname = .*.top
-
 
 */
 
