@@ -319,10 +319,10 @@
       ]
     },
     {
-            "id": "ymzhuan",
-            "name": "羊毛赚APP",
+            "id": "ymz",
+            "name": "羊毛赚",
+	    "author": "@ziye",
            "keys": ["ymzhuanggbody", "ymzhuanspbody", "ymzhuantxbody",  "ymzhuanggbody2", "ymzhuanspbody2", "ymzhuantxbody2", "ymzhuanggbody3", "ymzhuanspbody3", "ymzhuantxbody3"],
-            "author": "@ziye",
             "settings": [{
                     "id": "ymzhuanSuffix",
                     "name": "当前账号",
