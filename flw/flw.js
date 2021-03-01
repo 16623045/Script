@@ -257,11 +257,25 @@ function GetCookie() {
   //返利网趣味
   if ($request && $request.url.indexOf("videofeed") >= 0 && $request.body.indexOf("content=") >= 0) {
     const flwqwbodyVal = $request.body;
-    if (flwqwbodyVal) $.setdata(flwqwbodyVal, "flwqwbody" + $.idx);
-    $.log(
-      `[${$.name + $.idx}] 获取flwqwbodyVal✅: 成功,flwqwbodyVal: ${flwqwbodyVal}`
-    );
-    $.msg($.name + $.idx, `获取flwqwbodyVal: 成功🎉`, ``);
+    if (flwqwbodyVal) {
+            let bodys = $.getdata('flwqwbody' + $.idx);
+		
+            if (bodys) {
+		    
+                if (bodys.indexOf(flwqwbodyVal) >= 0) {
+                    $.msg('body重复跳过');
+                    $.done();
+                }
+                flwqwbody = bodys.split('&');
+                bodys = flwqwbodyVal + '&' + bodys;
+            } else {
+                bodys = flwqwbodyVal;		    
+            }
+            $.setdata(bodys, "flwqwbody" + $.idx);
+            $.log(
+                `[${$.name + $.idx}] 获取flwqwbody${flwqwbody.length+1}✅: 成功,flwqwbody${flwqwbody.length+1}: ${flwqwbodyVal}`
+            );
+            $.msg($.name + $.idx, `获取flwqwbody${flwqwbody.length+1}✅: 成功🎉`)
   }
   
    //返利网阅读
@@ -885,7 +899,7 @@ function flwlsp(timeout = 0) {
 function flwqw(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < qwBODY.length; i++) {
         $.index = i + 1
         setTimeout(() => {
           flwqwurlVal = `https://gw.fanli.com/app/v1/videofeed/report.htm?uid=${uid}&token=${token}&nonce=&t=${ts()}&pageType=0&sn=${sn}&src=1&v=7.16.6.1&abtest=${abtest}`
