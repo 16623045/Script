@@ -66,8 +66,8 @@
             ],
 		"repo": "https://github.com/ziye66666",
 		"script": "https://raw.githubusercontent.com/16623045/Script/main/xiaopu/iboxpay.js",
-		"icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png",
-		"https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png"
+		"icons": ["https://raw.githubusercontent.com/16623045/Script/main/logo/iboxpay.png",
+		"https://raw.githubusercontent.com/16623045/Script/main/logo/iboxpay.png"
         ]
 	},
     {
@@ -178,7 +178,7 @@
             ],
             "repo": "https://github.com/ziye66666",
             "script": "https://raw.githubusercontent.com/16623045/Script/main/flw/flw.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png"
+            "icons": ["https://raw.githubusercontent.com/16623045/Script/main/logo/flw.png", "https://raw.githubusercontent.com/16623045/Script/main/logo/flw.png"
             ]
     },
     {   "descs_html": [
