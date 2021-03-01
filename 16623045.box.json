@@ -176,7 +176,7 @@
                     "desc": "默认0，可设置设置 0 5 50 100"
                 }
             ],
-            "repo": "https://github.com/ziye66666",
+            "repo": "https://github.com/ziye",
             "script": "https://raw.githubusercontent.com/16623045/Script/main/flw/flw.js",
             "icons": ["https://raw.githubusercontent.com/16623045/Script/main/logo/flw.png", "https://raw.githubusercontent.com/16623045/Script/main/logo/flw.png"
             ]
