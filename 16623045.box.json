@@ -318,7 +318,45 @@
         "icons" : ["https://raw.githubusercontent.com/16623045/Script/main/logo/youth.png","https://raw.githubusercontent.com/16623045/Script/main/logo/youth.png"
       ]
     },
-		 {
+    {
+            "id": "ymzhuan",
+            "name": "羊毛赚APP",
+           "keys": ["ymzhuanggbody", "ymzhuanspbody", "ymzhuantxbody",  "ymzhuanggbody2", "ymzhuanspbody2", "ymzhuantxbody2", "ymzhuanggbody3", "ymzhuanspbody3", "ymzhuantxbody3"],
+            "author": "@ziye",
+            "settings": [{
+                    "id": "ymzhuanSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "ymzhuanCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "ymzhuanCASH",
+                    "name": "提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不提现，可设置 0 3 10 20 50 100 888  设置888由上至下循环提现 "
+                },
+                {
+                    "id": "ymzhuanUSERID",
+                    "name": "模拟登录",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不使用，输入id模拟登录，一般为4位"
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.js",
+            "icons": ["https://raw.githubusercontent.com/16623045/Script/main/logo/ymzhuan.png", "https://raw.githubusercontent.com/16623045/Script/main/logo/ymzhuan.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.js"
+        },	
+	{
 		"id": "dkdvideo",
 		"name": "多看点视频",
         "author": "@CenBoMin",
