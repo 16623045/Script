@@ -1,62 +1,73 @@
-/*
-软件名称:羊毛赚 商店搜索下载 羊毛英汉词典
-更新时间：2021-02-07 @肥皂
-脚本说明：羊毛赚
-脚本为
-完成广告任务
-完成视频任务
-每天有一块的收益
-每天运行一次即可
-获取不到body的检查自己的重写和mitm是否正确
-并暂时关闭广告重写和其他的重写，获取成功再打开
-本脚本以学习为主！
-使用方法:
-首次运行脚本，会提示获取body
-进入看广告任务，在任务界面停留三分钟，倒计时结束提示获取广告body成功
-进入看视频任务，观看玩一组视频，共五个左右，结束提示获取视频body成功
+/* ziye 
+github地址 https://github.com/ziye66666
+TG频道地址  https://t.me/ziyescript
+TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
+boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ziye.boxjs.json
 
-TG电报群: https://t.me/hahaha8028
-注意:
-必须要扫描二维码下载，下载完毕之后在扫描二维码点打开羊毛赚才可以加载出任务界面
+转载请备注个名字，谢谢
 
-二维码下载地址 https://raw.githubusercontent.com/age174/-/main/A6021BD8-081E-4BAF-A0E6-14198AA23EB5.jpeg
+⚠️羊毛赚
+点击 http://share.xiaoniuaso.com/43?invitecode=10008933   下载APP  
 
-我的邀请码 : 10008612  感谢大佬们填写 
-
-2.7 修复一些错误，判断广告和视频的body是否获取
-
-脚本每天运行一次即可
-
-羊毛赚
-圈X配置如下，其他软件自行测试，羊毛赚没有任务界面请务必复制上面的二维码链接到浏览器打开保存扫码，然后到扫码结果上打开
-[task_local]
-#羊毛赚
-15 10 * * * https://raw.githubusercontent.com/age174/-/main/ymz.js, tag=羊毛赚, img-url=https://s3.ax1x.com/2021/02/06/yYzYWR.png, enabled=true
+邀请码 10008933  谢谢支持
 
 
-[rewrite_local]
-#羊毛赚
-^http://ymz.iphonezhuan.com/addaction url script-request-body https://raw.githubusercontent.com/age174/-/main/ymz.js
+2.26 制作
+2.27 完成
+2.28 调整运行时长
+
+⚠️ 时间设置    0 8,12 * * *    每天1次以上就行   
 
 
+⚠️一共3个位置 3个ck  👉 4条 Secrets 
+多账号换行
 
-#loon
-^http://ymz.iphonezhuan.com/addaction script-path=https://raw.githubusercontent.com/age174/-/main/ymz.js, requires-body=true, timeout=10, tag=羊毛赚
+第一步 添加  hostname=ymz.iphonezhuan.com,
+
+第二步 ⚠️添加羊毛赚获取BODY重写  
+
+登录羊毛赚  手动完成一次任务获取body  提现一次获取提现body
+ymzhuanggbodyVal 👉YMZ_ymzhuanggBODY
+ymzhuanspbodyVal 👉YMZ_ymzhuanspBODY
+ymzhuantxbodyVal 👉YMZ_ymzhuantxBODY
+
+BODY👉 ymzhuanUSERID   boxjs里填写4位数id即可模拟登陆(感谢蔡徐坤大佬提供模拟登录方法)
+
+(勿打开重写注册，请提前注册，注册不了，请打开关闭 隐私跟踪)
+
+CASH  👉  YMZ_CASH     可设置0 3 10 20 50 100  默认0关闭提现，设置888由上至下循环提现
 
 
+⚠️主机名以及重写👇
+hostname=ymz.iphonezhuan.com,
 
-#surge
+############## 圈x
+#羊毛赚获取BODY
+http:\/\/ymz\.iphonezhuan\.com\/* url script-request-body http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js
 
-羊毛赚 = type=http-request,pattern=^http://ymz.iphonezhuan.com/addaction,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ymz.js,script-update-interval=0
-
+#羊毛赚模拟登录
+http:\/\/ymz\.iphonezhuan\.com\/* url script-response-body http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js
 
 
 
-[MITM]
-hostname = ymz.iphonezhuan.com
+############## loon
+#羊毛赚获取BODY
+http-request http:\/\/ymz\.iphonezhuan\.com\/* script-path=http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js, requires-body=1,max-size=0, tag=羊毛赚获取BODY
+
+#羊毛赚模拟登录BODY
+http-response http:\/\/ymz\.iphonezhuan\.com\/* script-path=http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js, requires-body=1,max-size=0, tag=羊毛赚获取BODY
+
+
+############## surge
+#羊毛赚获取BODY
+羊毛赚获取BODY = type=http-request,pattern=https:\/\/ymz\.iphonezhuan\.com\/*,script-path=http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js
+
+#羊毛赚获取BODY
+羊毛赚模拟登录BODY = type=http-response,pattern=https:\/\/ymz\.iphonezhuan\.com\/*,script-path=http://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js
 
 
 */
+
 const $ = Env("羊毛赚");
 $.idx = ($.idx = ($.getval('ymzhuanSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -1072,4 +1083,3 @@ function Env(t, e) {
         }
     }(t, e)
 }
-
