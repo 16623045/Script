@@ -93,7 +93,7 @@
             "id": "fqkk",
             "name": "番茄看看",
 	    "author": "@feizao",
-            "keys": ["uid1","fqkkurl", "fqkkhd","uid12","fqkkurl2","fqkkhd2","uid13","fqkkurl3","fqkkhd3","fqkkurl4","fqkkhd4","fqkkurl5", "fqkkhd5"],
+            "keys": ["fqkkuid","fqkkurl", "fqkkhd","fqkkuid","fqkkurl2","fqkkhd2","fqkkuid","fqkkurl3","fqkkhd3","fqkkurl4","fqkkhd4","fqkkurl5", "fqkkhd5"],
             "settings": [{
             "id": "fqkkstatus",
             "name": "当前账号",
