@@ -95,6 +95,13 @@
 	    "author": "@feizao",
             "keys": ["fqkk"],
             "settings": [{
+            "id": "fqkk.length",
+            "name": "当前账号数量",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }, 
+		    {
                 "id": "fqkkCkMove",
                 "val": "",
                 "name": "迁移旧数据",
