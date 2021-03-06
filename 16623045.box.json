@@ -93,7 +93,7 @@
             "id": "fqkk",
             "name": "番茄看看",
 	    "author": "@feizao",
-            "keys": ["fqkk", "fqkk2"],
+            "keys": ["fqkk"],
             "settings": [{
                 "id": "fqkkCkMove",
                 "val": "",
