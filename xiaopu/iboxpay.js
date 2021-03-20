@@ -45,7 +45,12 @@ boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThx
 3.8 替换为循环获取ck
 3.9 因视频功能无效，故取消视频，默认开启直播
 3.17 修复视频功能， 暂时设置ck上限为10
-3.18 修复视频错误，修复小错误
+3.18 修复视频错误，修复小错误，新增COOKIE方式一 boxjs复制会话
+3.19 修复ac运行报错
+3.20 视频ck有效期目前未知，增加失效判定，直播上限为5000，已适配
+
+
+
 ⚠️一共1个位置 3个ck  👉 7条 Secrets 
 多账号换行
 
@@ -78,7 +83,8 @@ iboxpayvideobodyVal👉 XP_iboxpayvideoBODY
 
 
 ⚠️视频ck
-添加视频ck重写  圈满获取header和body，暂时设置ck上限为10，若遇到网络问题，请切换到4G
+添加视频ck重写  圈满获取header和body，若遇到网络问题，请切换到4G
+
 
 
 设置任务 可设置 0 1 2    0开视频关直播 1开视频开直播 2关视频开直播
@@ -122,7 +128,7 @@ http-requires https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\
 
 
 */
-GXRZ = '3.18 修复视频错误，修复小错误'
+GXRZ = '3.20 视频ck有效期目前未知，增加失效判定，直播上限为5000，已适配'
 const $ = Env("笑谱");
 $.idx = ($.idx = ($.getval('iboxpaySuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -131,27 +137,38 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 const CS = 5
-$.message = '', COOKIES_SPLIT = '', CASH = '', LIVE = '', phone = '', sms = '', ddtime = '', spid = '', TOKEN = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', zbid = '', cashcs = '', newcashcs = '', liveId = '';
+$.message = '', COOKIES_SPLIT = '', CASH = '', Length = 0, LIVE = '', phone = '', sms = '', ddtime = '', spid = '', TOKEN = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', zbid = '', cashcs = '', newcashcs = '', liveId = '';
 let livecs = 0,
     videoscs = 0,
     LIVES = 0,
     HBY = 0,
     liveIdcd = 0;
 RT = 30000;
-const refreshtokenArr = [];
+let refreshtokenArr = [];
 let refreshtokenVal = ``;
 let middlerefreshTOKEN = [];
-const iboxpayvideoheaderArr = [];
+let iboxpayvideoheaderArr = [];
 let iboxpayvideoheaderVal = ``;
 let middleiboxpayvideoHEADER = [];
-const iboxpayvideobodyArr = [];
+let iboxpayvideobodyArr = [];
 let iboxpayvideobodyVal = ``;
 let middleiboxpayvideoBODY = [];
+if ($.isNode() && COOKIE.datas && COOKIE.datas[0].val != '') {
+    console.log(
+        `============ cookie方式为：方式一 boxjs复制会话 =============\n`
+    );
+}
+if ($.isNode() && COOKIE.refreshtokenVal && COOKIE.refreshtokenVal != '') {
+    console.log(
+        `============ cookie方式为：方式三 直接填写 =============\n`
+    );
+}
+
 if ($.isNode()) {
     // 没有设置 XP_CASH 则默认为 0 不提现
     CASH = process.env.XP_CASH || 0;
     // 没有设置 XP_live 则默认0
-    LIVE = process.env.XP_live || 0;
+    LIVE = process.env.XP_live || 1;
     // 没有设置 XP_phone 则默认为 0 
     phone = process.env.XP_phone || 0;
     // 没有设置 XP_sms 则默认0  不获取TOKEN
@@ -173,21 +190,23 @@ if ($.isNode() && process.env.XP_refreshTOKEN) {
     } else {
         middlerefreshTOKEN = process.env.XP_refreshTOKEN.split();
     }
-    if (
-        process.env.XP_iboxpayvideoHEADER &&
-        process.env.XP_iboxpayvideoHEADER.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleiboxpayvideoHEADER = process.env.XP_iboxpayvideoHEADER.split(COOKIES_SPLIT);
-    } else {
-        middleiboxpayvideoHEADER = process.env.XP_iboxpayvideoHEADER.split();
-    }
-    if (
-        process.env.XP_iboxpayvideoBODY &&
-        process.env.XP_iboxpayvideoBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleiboxpayvideoBODY = process.env.XP_iboxpayvideoBODY.split(COOKIES_SPLIT);
-    } else {
-        middleiboxpayvideoBODY = process.env.XP_iboxpayvideoBODY.split();
+    if (process.env.XP_iboxpayvideoHEADER) {
+        if (
+            process.env.XP_iboxpayvideoHEADER &&
+            process.env.XP_iboxpayvideoHEADER.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleiboxpayvideoHEADER = process.env.XP_iboxpayvideoHEADER.split(COOKIES_SPLIT);
+        } else {
+            middleiboxpayvideoHEADER = process.env.XP_iboxpayvideoHEADER.split();
+        }
+        if (
+            process.env.XP_iboxpayvideoBODY &&
+            process.env.XP_iboxpayvideoBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleiboxpayvideoBODY = process.env.XP_iboxpayvideoBODY.split(COOKIES_SPLIT);
+        } else {
+            middleiboxpayvideoBODY = process.env.XP_iboxpayvideoBODY.split();
+        }
     }
 }
 if (COOKIE.refreshtokenVal) {
@@ -199,7 +218,23 @@ if (COOKIE.refreshtokenVal) {
     }
     Length = XP_COOKIES.refreshtokenVal.length;
 }
-if (!COOKIE.refreshtokenVal) {
+if (COOKIE.datas && COOKIE.datas[0].val != '') {
+
+    iboxpayCount = COOKIE.settings.find(item => item.id === `iboxpayCount`);
+    iboxpayLIVE = COOKIE.settings.find(item => item.id === `iboxpayLIVE`);
+    iboxpayCASH = COOKIE.settings.find(item => item.id === `iboxpayCASH`);
+    iboxpayphone = COOKIE.settings.find(item => item.id === `iboxpayphone`);
+    iboxpaysms = COOKIE.settings.find(item => item.id === `iboxpaysms`);
+
+    Length = iboxpayCount.val
+    LIVE = iboxpayLIVE.val
+    CASH = iboxpayCASH.val
+    phone = iboxpayphone.val
+    sms = iboxpaysms.val
+
+}
+
+if (!COOKIE.datas && !COOKIE.refreshtokenVal) {
     if ($.isNode()) {
         Object.keys(middlerefreshTOKEN).forEach((item) => {
             if (middlerefreshTOKEN[item]) {
@@ -502,6 +537,24 @@ async function all() {
         return;
     }
     for (let i = 0; i < Length; i++) {
+        if (COOKIE.datas && COOKIE.datas[0].val != '') {
+
+
+            if (i == 0) {
+                op = ``
+            } else {
+                op = i + 1
+            }
+
+            refreshtokens = COOKIE.datas.find(item => item.key === `refreshtoken${op}`);
+            iboxpayvideoheader = COOKIE.datas.find(item => item.key === `iboxpayvideoheader${op}`);
+            iboxpayvideobody = COOKIE.datas.find(item => item.key === `iboxpayvideobody${op}`);
+
+            refreshtokenVal = refreshtokens.val;
+            iboxpayvideoheaderVal = iboxpayvideoheader.val;
+            iboxpayvideobodyVal = iboxpayvideobody.val;
+
+        }
 
         if (COOKIE.refreshtokenVal) {
 
@@ -509,7 +562,7 @@ async function all() {
             iboxpayvideoheaderVal = XP_COOKIES.iboxpayvideoheaderVal[i];
             iboxpayvideobodyVal = XP_COOKIES.iboxpayvideobodyVal[i];
         }
-        if (!COOKIE.refreshtokenVal) {
+        if (!COOKIE.datas && !COOKIE.refreshtokenVal) {
 
             refreshtokenVal = refreshtokenArr[i];
             iboxpayvideoheaderVal = iboxpayvideoheaderArr[i];
@@ -561,7 +614,7 @@ async function all() {
             }
         }
 
-        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 20) {
+        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 10) {
             await liveslist(); //直播节目表
             if (liveIdcd >= 1) {
                 dd = liveIdcd * 35 - 34
@@ -590,7 +643,7 @@ async function all() {
 
             }
 
-        } else if (!iboxpayvideoheaderVal && !iboxpayvideobodyVal && iboxpayvideoheaderVal == '' && iboxpayvideobodyVal == '') {
+        } else if (!iboxpayvideoheaderVal || !iboxpayvideobodyVal || iboxpayvideoheaderVal == '' || iboxpayvideobodyVal == '') {
             console.log('视频奖励：未获取视频ck\n');
             $.message += '【视频奖励】：未获取视频ck\n'
         } else if (LIVE == 2) {
@@ -838,10 +891,8 @@ function hdid(timeout = 0) {
                     if ($.hdid.resultCode == 1) {
                         spid = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 9)
                         zbid = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 10)
-                        //console.log(spid.actName + 'ID：' + spid.actId + '\n' +
-                        //zbid.actName + 'ID：' + zbid.actId + '\n');
-                        //$.message += '【' + spid.actName + 'ID】：' + spid.actId + '\n' +
-                        //'【' + zbid.actName + 'ID】：' + zbid.actId + '\n';
+                        console.log(spid.actName + 'ID：' + spid.actId + '\n');
+                        $.message += '【' + spid.actName + 'ID】：' + spid.actId + '\n';
                     }
 
                 } catch (e) {
@@ -901,11 +952,11 @@ function videoo(timeout = 0) {
             videoHEADER1 = videoHEADER[0].replace(`${token}`, `${TOKEN}`)
 
             SPID = videoBODY[0].split(`"actId":"`)[1].split(`"}`)[0]
-            videoBODY1 = videoBODY[0].replace(`${SPID}`, `${spid.actId}`)
+           
             let url = {
                 url: `https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json`,
                 headers: JSON.parse(videoHEADER1),
-                body: videoBODY1,
+                body: videoBODY[0],
             }
             $.post(url, async (err, resp, data) => {
                 try {
@@ -913,15 +964,20 @@ function videoo(timeout = 0) {
                     $.videoo = JSON.parse(data);
                     if ($.videoo.resultCode == 0) {
                         LIVES = 2
+                        if (SPID != spid.actId) {
 
-                        if ($.videoo.errorCode == "GATEWAY-ERROR-002") {
+                            console.log('视频奖励：⚠️视频CK已过期，请重新获取\n');
+                            $.message += '【视频奖励】：⚠️视频CK已过期，请重新获取\n'
+
+                        }else if ($.videoo.errorCode == "GATEWAY-ERROR-002") {
                             console.log('视频奖励：⚠️进入冷却中......\n');
                             $.message += '【视频奖励】：⚠️进入冷却中......\n'
-                        }
-
-                        if ($.videoo.errorCode == "GATEWAY-ERROR-003") {
+                        } else if ($.videoo.errorCode == "GATEWAY-ERROR-003") {
                             console.log('视频奖励：⚠️TOKEN失效\n');
                             $.message += '【视频奖励】：⚠️TOKEN失效\n'
+                        } else {
+                            console.log(`视频奖励：⚠️${$.videoo.errorCode}\n`);
+                            $.message += `【视频奖励】：⚠️${$.videoo.errorCode}\n`
                         }
 
                     }
@@ -956,14 +1012,11 @@ function video(timeout = 0) {
                 setTimeout(() => {
                     token = videoHEADER[i].split(`"token":"`)[1].split(`",`)[0]
                     videoHEADER2 = videoHEADER[i].replace(`${token}`, `${TOKEN}`)
-                    SPID = videoBODY[i].split(`"actId":"`)[1].split(`"}`)[0]
-                    videoBODY2 = videoBODY[i].replace(`${SPID}`, `${spid.actId}`)
-
-
+                    //SPID = videoBODY[i].split(`"actId":"`)[1].split(`"}`)[0]
                     let url = {
                         url: `https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json`,
                         headers: JSON.parse(videoHEADER2),
-                        body: videoBODY2,
+                        body: videoBODY[i],
                     }
                     $.post(url, async (err, resp, data) => {
                         try {
