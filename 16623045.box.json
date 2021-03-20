@@ -19,7 +19,7 @@
 		"id": "iboxpay",
 		"name": "笑谱",
         "author": "@ziye",
-        "keys": ["refreshtoken", "iboxpayvideoheader", "iboxpayvideobody", "refreshtoken2", "iboxpayvideoheader2", "iboxpayvideobody2", "refreshtoken3", "iboxpayvideoheader3", "iboxpayvideobody3"],
+        "keys": ["refreshtoken", "refreshtoken2", "refreshtoken3", "refreshtoken4", "refreshtoken5", "refreshtoken6", "refreshtoken7", "refreshtoken8"],
         "settings": [
 		{
                 "id": "iboxpaySuffix",
