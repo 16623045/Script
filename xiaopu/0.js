@@ -373,7 +373,7 @@ async function all() {
             await withdraw(); //提现
         }
 
-        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 20) {
+        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 10) {
             await liveslist(); //直播节目表
             if (liveIdcd >= 1) {
                 dd = liveIdcd * 35 - 34
@@ -1087,9 +1087,9 @@ function sylist(timeout = 0) {
                     } else videoscs = 0;
 
                     spsy = $.goldcoin.data.coinSum - livecs * 500
-                    console.log('已获得红包雨奖励 ' + hbycs + ' 次\n')
-                    $.message +=
-                        '【红包雨收益】：已获得红包雨奖励 ' + hbycs + ' 次\n'
+                    //console.log('已获得红包雨奖励 ' + hbycs + ' 次\n')
+                    //$.message +=
+                    //    '【红包雨收益】：已获得红包雨奖励 ' + hbycs + ' 次\n'
                     console.log('已获得直播奖励 ' + livecs + ' 次，共' + livecs * 500 + '金币\n')
                     $.message +=
                         '【直播收益】：已获得直播奖励 ' + livecs + ' 次，共' + livecs * 500 + '金币\n'
